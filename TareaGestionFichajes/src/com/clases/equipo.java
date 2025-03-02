@@ -1,5 +1,5 @@
 package com.clases;
-
+import com.enums.*;
 import java.util.ArrayList;
 
 public class equipo {
@@ -30,6 +30,16 @@ public class equipo {
             this.jugador.remove(jugador);
             jugador.setEquipo(null);
         }
+    }
+
+    public void reseteo() {
+        for (jugador jugador : jugador) {
+            if (jugador.getTraspaso() == traspaso.rechazado_por_entrenador ||
+                jugador.getTraspaso() == traspaso.rechazado_por_presidente) {
+                jugador.setTraspaso(traspaso.sin_solicitar);
+            }
+        }
+        System.out.println("Estados de traspaso reseteados de: " + nombre);
     }
 
     public String getNombre() {
