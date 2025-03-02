@@ -11,11 +11,11 @@ public class equipo {
 
     public equipo(String nombre_equi, String abreviatura_equi, entrenador entrenador_equi, presidente presidente_equi,
             ArrayList jugador_equi) {
-        this.nombre = (nombre_equi != null) ? nombre : "Ninguno";
-        this.abreviatura = (abreviatura_equi != null) ? abreviatura : "Ningunoo";
+        this.nombre = (nombre_equi != null) ? nombre_equi : "Ninguno";
+        this.abreviatura = (abreviatura_equi != null) ? abreviatura_equi : "Ningunoo";
         this.entrenador = entrenador_equi;
         this.presidente = presidente_equi;
-        this.jugador = (jugador_equi != null) ? jugador : new ArrayList<>();
+        this.jugador = (jugador_equi != null) ? jugador_equi : new ArrayList<>();
     }
 
     public void agregarJug(jugador jugador) {
@@ -24,7 +24,7 @@ public class equipo {
             jugador.setEquipo(this);
         }
     }
-    
+
     public void eliminarJug(jugador jugador) {
         if (jugador != null && this.jugador.contains(jugador)) {
             this.jugador.remove(jugador);
@@ -74,4 +74,12 @@ public class equipo {
         }
     }
 
+    @Override
+    public String toString() {
+        String comprobarEntrenador = (entrenador != null) ? entrenador.getNombre() : "Ningun entrenador";
+        String comprobarPresidente = (presidente != null) ? presidente.getNombre() : "Ningun presidente";
+        return "equipo [nombre=" + nombre + ", abreviatura=" + abreviatura + ", entrenador=" + comprobarEntrenador
+                + ", presidente=" + comprobarPresidente + ", jugador=" + jugador + "]";
+    }
+    
 }

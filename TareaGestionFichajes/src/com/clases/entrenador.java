@@ -8,8 +8,8 @@ public class entrenador {
     private equipo equipo;
 
     public entrenador(String nombre_entr, formacion formacion_entr, equipo equipo_entr) {
-        this.nombre = (nombre_entr != null) ? nombre : "Ninguno";
-        this.formacion = (formacion_entr != null) ? formacion : formacion._332_default;
+        this.nombre = (nombre_entr != null) ? nombre_entr : "Ninguno";
+        this.formacion = (formacion_entr != null) ? formacion_entr : formacion._332_default;
         this.equipo = equipo_entr;
     }
 
@@ -35,6 +35,12 @@ public class entrenador {
 
     public void setEquipo(equipo equipo) {
         this.equipo = equipo;
+    }
+
+    @Override
+    public String toString() {
+        String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
+        return "entrenador [nombre=" + nombre + ", formacion=" + formacion + ", equipo=" + comprobarEquipo + "]";
     }
 
 }

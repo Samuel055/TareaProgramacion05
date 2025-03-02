@@ -6,8 +6,8 @@ public class presidente {
     private equipo equipo;
 
     public presidente(String nombre_presi, String dni_presi, equipo equipo_presi) {
-        this.nombre = (nombre_presi != null) ? nombre : "Ninguno";
-        this.dni = (dni_presi != null) ? dni : "--------";
+        this.nombre = (nombre_presi != null) ? nombre_presi : "Ninguno";
+        this.dni = (dni_presi != null) ? dni_presi : "--------";
         this.equipo = equipo_presi;
     }
 
@@ -35,4 +35,9 @@ public class presidente {
         this.equipo = equipo;
     }
 
+    @Override
+    public String toString() {
+        String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
+        return "presidente [nombre=" + nombre + ", dni=" + dni + ", equipo=" + comprobarEquipo + "]";
+    }
 }
