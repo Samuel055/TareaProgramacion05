@@ -10,9 +10,10 @@ public class jugador {
     private posicion posicion;
     private int dorsal;
     private traspaso traspaso;
+    private equipo equipo;
 
     public jugador(String nombre_jug, Date nacimiento_jug, String pais_jug, posicion posicion_jug, int dorsal_jug,
-            traspaso traspaso_jug) {
+            traspaso traspaso_jug, equipo equipo_jug) {
         this.nombre = (nombre_jug != null) ? nombre : "Ninguno";
         this.nacimiento = (nacimiento_jug != null) ? nacimiento : new Date();
         this.pais = (pais_jug != null) ? pais : "Ninguno";
@@ -68,5 +69,13 @@ public class jugador {
     public void setTraspaso(traspaso traspaso) {
         this.traspaso = (traspaso != null) ? traspaso : traspaso.sin_solicitar;
     }
-    
+
+    public equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(equipo equipo) {
+        this.equipo = equipo;
+    }
+
 }
