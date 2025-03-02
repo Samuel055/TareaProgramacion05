@@ -1,0 +1,123 @@
+==== CONFIGS ====		
+{
+    "base_path": "c:\\Users\\Airak\\Downloads\\TareaProgramacion05\\TareaGestionFichajes\\src",
+    "out": "c:\\Users\\Airak\\Downloads\\TareaProgramacion05\\TareaGestionFichajes\\src\\javadoc",
+    "javadoc_executable": "C:\\Program Files\\Java\\jdk-23\\bin\\javadoc.exe",
+    "exclude": [],
+    "raw_params": ""
+}
+
+==== COMMAND ====
+"C:\Program Files\Java\jdk-23\bin\javadoc.exe" 
+	-sourcepath "c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src" 
+	-d "c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc" 
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\entrenador.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\equipo.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\jugador.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\presidente.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java"
+	"c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\main\App.java"
+
+
+==== JAVADOC OUTPUT ====
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\entrenador.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\equipo.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\jugador.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\presidente.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java...
+Loading source file c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\main\App.java...
+Constructing Javadoc information...
+Creating destination directory: "c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\"
+Building index for all the packages and classes...
+Standard Doclet version 23+37-2369
+Building tree for all the packages and classes...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\App.html...
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\main\App.java:11: warning: use of default constructor, which does not provide a comment
+public class App {
+       ^
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\entrenador.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\equipo.html...
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\clases\equipo.java:9: warning: no comment
+public class equipo {
+       ^
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\enums\formacion.html...
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java:3: warning: no comment
+public enum formacion {
+       ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java:4: warning: no comment
+    _332_default, _341, _431, _251;
+                              ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java:4: warning: no comment
+    _332_default, _341, _431, _251;
+    ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java:4: warning: no comment
+    _332_default, _341, _431, _251;
+                  ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\formacion.java:4: warning: no comment
+    _332_default, _341, _431, _251;
+                        ^
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\jugador.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\enums\posicion.html...
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:3: warning: no comment
+public enum posicion {
+       ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:4: warning: no comment
+    delantero, defensa, mediocampista, portero, reserva;
+               ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:4: warning: no comment
+    delantero, defensa, mediocampista, portero, reserva;
+    ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:4: warning: no comment
+    delantero, defensa, mediocampista, portero, reserva;
+                        ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:4: warning: no comment
+    delantero, defensa, mediocampista, portero, reserva;
+                                       ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\posicion.java:4: warning: no comment
+    delantero, defensa, mediocampista, portero, reserva;
+                                                ^
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\presidente.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\enums\traspaso.html...
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:3: warning: no comment
+public enum traspaso {
+       ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:4: warning: no comment
+    sin_solicitar, solicitado, aprobado_por_entrenador, aprobado_por_presidente, rechazado_por_entrenador,
+                               ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:4: warning: no comment
+    sin_solicitar, solicitado, aprobado_por_entrenador, aprobado_por_presidente, rechazado_por_entrenador,
+                                                        ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:4: warning: no comment
+    sin_solicitar, solicitado, aprobado_por_entrenador, aprobado_por_presidente, rechazado_por_entrenador,
+                                                                                 ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:5: warning: no comment
+    rechazado_por_presidente;
+    ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:4: warning: no comment
+    sin_solicitar, solicitado, aprobado_por_entrenador, aprobado_por_presidente, rechazado_por_entrenador,
+    ^
+c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\com\enums\traspaso.java:4: warning: no comment
+    sin_solicitar, solicitado, aprobado_por_entrenador, aprobado_por_presidente, rechazado_por_entrenador,
+                   ^
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\package-summary.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\package-tree.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\package-summary.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\clases\package-tree.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\enums\package-summary.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\com\enums\package-tree.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\overview-tree.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\index.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\allclasses-index.html...
+Building index for all classes...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\allpackages-index.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\index-all.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\search.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\overview-summary.html...
+Generating c:\Users\Airak\Downloads\TareaProgramacion05\TareaGestionFichajes\src\javadoc\help-doc.html...
+20 warnings
+
+
