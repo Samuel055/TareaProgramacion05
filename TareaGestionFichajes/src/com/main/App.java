@@ -1,100 +1,135 @@
 import java.util.Calendar;
 import java.util.Date;
-
+import java.util.ArrayList;
 import com.clases.*;
 import com.enums.*;
-import java.util.ArrayList;
 
+/**
+ * Clase principal que inicializa y gestiona los objetos relacionados con el
+ * sistema de fútbol.
+ */
 public class App {
-    public static Date nacimiento(int año, int mes, int dia) {
-        Calendar cal = Calendar.getInstance();
-        cal.set(año, mes - 1, dia);
-        return cal.getTime();
-    }
 
-    public static void main(String[] args) throws Exception {
-        entrenador entrenador1 = new entrenador("Pep Guardiola", formacion._251, null);
-        entrenador entrenador2 = new entrenador("Carlo Ancelotti", formacion._431, null);
+        /**
+         * Método auxiliar para crear una fecha de nacimiento.
+         * 
+         * @param anio Año de nacimiento.
+         * @param mes  Mes de nacimiento (1-12).
+         * @param dia  Día de nacimiento.
+         * @return Objeto Date con la fecha indicada.
+         */
+        public static Date nacimiento(int anio, int mes, int dia) {
+                Calendar cal = Calendar.getInstance();
+                cal.set(anio, mes - 1, dia);
+                return cal.getTime();
+        }
 
-        equipo equipo1 = new equipo("Bayern Munich", "BAY", null, null, null);
-        equipo equipo2 = new equipo("FC Barcelona", "BAR", null, null, null);
+        /**
+         * Método principal que ejecuta la lógica del programa.
+         * 
+         * @param args Argumentos de línea de comandos (no utilizados en este programa).
+         * @throws Exception Puede lanzar excepciones en tiempo de ejecución.
+         */
+        public static void main(String[] args) throws Exception {
+                // Creación de entrenadores
+                entrenador entrenador1 = new entrenador("Pep Guardiola", formacion._251, null);
+                entrenador entrenador2 = new entrenador("Carlo Ancelotti", formacion._431, null);
 
-        jugador jugador1 = new jugador("Lionel Messi", nacimiento(1987, 06, 24), "Argentina", posicion.delantero, 10,
-                traspaso.sin_solicitar, null);
-        jugador jugador2 = new jugador("Cristiano Ronaldo", nacimiento(1985, 2, 5), "Portugal", posicion.defensa, 7,
-                traspaso.sin_solicitar, null);
-        jugador jugador3 = new jugador("Kylian Mbappé", nacimiento(1998, 12, 20), "Francia", posicion.mediocampista, 7,
-                traspaso.sin_solicitar, null);
-        jugador jugador4 = new jugador("Erling Haaland", nacimiento(2000, 07, 21), "Noruega", posicion.portero, 9,
-                traspaso.sin_solicitar, null);
-        jugador jugador5 = new jugador("Luka Modric", nacimiento(1985, 9, 9), "Croacia", posicion.delantero, 10,
-                traspaso.sin_solicitar, null);
-        
-        presidente presidente1 = new presidente("Florentino Perez", "12345678J", null);
-        presidente presidente2 = new presidente("Joan Laporta", "87654321J", null);
+                // Creación de equipos
+                equipo equipo1 = new equipo("Bayern Munich", "BAY", null, null, null);
+                equipo equipo2 = new equipo("FC Barcelona", "BAR", null, null, null);
 
-        ArrayList<jugador> BAY = new ArrayList<jugador>();
-        ArrayList<jugador> BAR = new ArrayList<jugador>();
+                // Creación de jugadores
+                jugador jugador1 = new jugador("Lionel Messi", nacimiento(1987, 06, 24), "Argentina",
+                                posicion.delantero, 10,
+                                traspaso.sin_solicitar, null);
+                jugador jugador2 = new jugador("Cristiano Ronaldo", nacimiento(1985, 2, 5), "Portugal",
+                                posicion.defensa, 7,
+                                traspaso.sin_solicitar, null);
+                jugador jugador3 = new jugador("Kylian Mbappé", nacimiento(1998, 12, 20), "Francia",
+                                posicion.mediocampista, 7,
+                                traspaso.sin_solicitar, null);
+                jugador jugador4 = new jugador("Erling Haaland", nacimiento(2000, 07, 21), "Noruega", posicion.portero,
+                                9,
+                                traspaso.sin_solicitar, null);
+                jugador jugador5 = new jugador("Luka Modric", nacimiento(1985, 9, 9), "Croacia", posicion.delantero, 10,
+                                traspaso.sin_solicitar, null);
 
-        equipo1.setEntrenador(entrenador1);
-        equipo1.setPresidente(presidente1);
-        equipo1.setJugador(BAY);
-        equipo2.setEntrenador(entrenador2);
-        equipo2.setPresidente(presidente2);
-        equipo2.setJugador(BAR);
+                // Creación de presidentes
+                presidente presidente1 = new presidente("Florentino Perez", "12345678J", null);
+                presidente presidente2 = new presidente("Joan Laporta", "87654321J", null);
 
-        entrenador1.setEquipo(equipo1);
-        entrenador2.setEquipo(equipo2);
+                // Listas de jugadores para cada equipo
+                ArrayList<jugador> BAY = new ArrayList<>();
+                ArrayList<jugador> BAR = new ArrayList<>();
 
-        presidente1.setEquipo(equipo1);
-        presidente2.setEquipo(equipo2);
-        
-        jugador1.setEquipo(equipo1);
-        jugador2.setEquipo(equipo1);
-        jugador3.setEquipo(equipo1);
-        jugador4.setEquipo(equipo2);
-        jugador5.setEquipo(equipo2);
+                // Asignación de entrenadores y presidentes a equipos
+                equipo1.setEntrenador(entrenador1);
+                equipo1.setPresidente(presidente1);
+                equipo1.setJugador(BAY);
+                equipo2.setEntrenador(entrenador2);
+                equipo2.setPresidente(presidente2);
+                equipo2.setJugador(BAR);
 
-        equipo1.agregarJug(jugador1);
-        equipo1.agregarJug(jugador2);
-        equipo1.agregarJug(jugador3);
-        equipo2.agregarJug(jugador4);
-        equipo2.agregarJug(jugador5);
+                // Asignación de equipos a entrenadores y presidentes
+                entrenador1.setEquipo(equipo1);
+                entrenador2.setEquipo(equipo2);
+                presidente1.setEquipo(equipo1);
+                presidente2.setEquipo(equipo2);
 
-        System.out.println(equipo1);
-        System.out.println(jugador1);
-        System.out.println(entrenador1);
-        System.out.println(presidente1);
+                // Asignación de jugadores a equipos
+                jugador1.setEquipo(equipo1);
+                jugador2.setEquipo(equipo1);
+                jugador3.setEquipo(equipo1);
+                jugador4.setEquipo(equipo2);
+                jugador5.setEquipo(equipo2);
 
-        System.out.println("-----Jugador 2 y 3 piden traspaso al equipo 2-----");
-        jugador2.setTraspaso(traspaso.solicitado);
-        jugador2.solicitudDeTraspaso();
-        jugador3.solicitudDeTraspaso();
+                // Agregar jugadores a los equipos
+                equipo1.agregarJug(jugador1);
+                equipo1.agregarJug(jugador2);
+                equipo1.agregarJug(jugador3);
+                equipo2.agregarJug(jugador4);
+                equipo2.agregarJug(jugador5);
 
-        System.out.println("-----Entrenador decide si acepta o no-----");
-        jugador2.entrenadorAceptacion(false);
-        jugador3.entrenadorAceptacion(true);
+                // Impresión del estado inicial de los equipos y jugadores
+                System.out.println(equipo1);
+                System.out.println(jugador1);
+                System.out.println(entrenador1);
+                System.out.println(presidente1);
 
-        System.out.println("-----Presidente decide si acepta o no-----");
-        jugador2.presidenteAceptacion(true);
-        jugador3.presidenteAceptacion(true);
+                // Simulación de solicitudes de traspaso
+                System.out.println("-----Jugador 2 y 3 piden traspaso al equipo 2-----");
+                jugador2.setTraspaso(traspaso.solicitado);
+                jugador2.solicitudDeTraspaso();
+                jugador3.solicitudDeTraspaso();
 
-        System.out.println("-----Proceso de traspaso de jugador(es) aceptados-----");
-        jugador3.transferir(equipo2);
+                // Decisión del entrenador sobre los traspasos
+                System.out.println("-----Entrenador decide si acepta o no-----");
+                jugador2.entrenadorAceptacion(false);
+                jugador3.entrenadorAceptacion(true);
 
-        System.out.println("-----Reseteo del estado de Traspaso para los rechazados-----");
-        equipo1.reseteo();
-        System.out.println("-----Visualizacion del estado del jugador 2-----");
-        System.out.println(jugador2);
-        System.out.println("-----Visualizacion del estado del equipo 2-----");
-        System.out.println(equipo2);
+                // Decisión del presidente sobre los traspasos
+                System.out.println("-----Presidente decide si acepta o no-----");
+                jugador2.presidenteAceptacion(true);
+                jugador3.presidenteAceptacion(true);
 
-        System.out.println("-----Conteo de objetos totales creados-----");
-        System.out.println("Total de entrenadores: " + entrenador.getTotalEntr());
-        System.out.println("Total de equipos: " + equipo.getTotalEqui());
-        System.out.println("Total de jugadores: " + jugador.getTotalJug());
-        System.out.println("Total de presidentes: " + presidente.getTotalPresi());
+                // Proceso de traspaso de los jugadores aprobados
+                System.out.println("-----Proceso de traspaso de jugador(es) aceptados-----");
+                jugador3.transferir(equipo2);
 
-    }
+                // Reseteo de estados de traspaso en el equipo 1
+                System.out.println("-----Reseteo del estado de Traspaso para los rechazados-----");
+                equipo1.reseteo();
+                System.out.println("-----Visualización del estado del jugador 2-----");
+                System.out.println(jugador2);
+                System.out.println("-----Visualización del estado del equipo 2-----");
+                System.out.println(equipo2);
 
+                // Conteo de objetos totales creados
+                System.out.println("-----Conteo de objetos totales creados-----");
+                System.out.println("Total de entrenadores: " + entrenador.getTotalEntr());
+                System.out.println("Total de equipos: " + equipo.getTotalEqui());
+                System.out.println("Total de jugadores: " + jugador.getTotalJug());
+                System.out.println("Total de presidentes: " + presidente.getTotalPresi());
+        }
 }
