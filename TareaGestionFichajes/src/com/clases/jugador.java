@@ -14,12 +14,12 @@ public class jugador {
 
     public jugador(String nombre_jug, Date nacimiento_jug, String pais_jug, posicion posicion_jug, int dorsal_jug,
             traspaso traspaso_jug, equipo equipo_jug) {
-        this.nombre = (nombre_jug != null) ? nombre : "Ninguno";
-        this.nacimiento = (nacimiento_jug != null) ? nacimiento : new Date();
-        this.pais = (pais_jug != null) ? pais : "Ninguno";
-        this.posicion = (posicion_jug != null) ? posicion : posicion.reserva;
-        this.dorsal = (dorsal_jug >= 1) ? dorsal : 0;
-        this.traspaso = (traspaso_jug != null) ? traspaso : traspaso.sin_solicitar;
+        this.nombre = (nombre_jug != null) ? nombre_jug : "Ninguno";
+        this.nacimiento = (nacimiento_jug != null) ? nacimiento_jug : new Date();
+        this.pais = (pais_jug != null) ? pais_jug : "Ninguno";
+        this.posicion = (posicion_jug != null) ? posicion_jug : posicion.reserva;
+        this.dorsal = (dorsal_jug >= 1) ? dorsal_jug : 0;
+        this.traspaso = (traspaso_jug != null) ? traspaso_jug : traspaso.sin_solicitar;
     }
 
     public String getNombre() {
@@ -76,6 +76,13 @@ public class jugador {
 
     public void setEquipo(equipo equipo) {
         this.equipo = equipo;
+    }
+
+    @Override
+    public String toString() {
+        String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
+        return "jugador [nombre=" + nombre + ", nacimiento=" + nacimiento + ", pais=" + pais + ", posicion=" + posicion
+                + ", dorsal=" + dorsal + ", traspaso=" + traspaso + ", equipo=" + comprobarEquipo + "]";
     }
 
 }
