@@ -22,6 +22,46 @@ public class jugador {
         this.traspaso = (traspaso_jug != null) ? traspaso_jug : traspaso.sin_solicitar;
     }
 
+    public void solicitudDeTraspaso() {
+        if (this.traspaso == traspaso.sin_solicitar) {
+            this.traspaso = traspaso.solicitado;
+            System.out.println("El jugador " + this.nombre + " esta solicitando un traspaso.");
+        } else {
+            System.out.println("El jugador " + this.nombre + " ya ha solicitado un traspaso.");
+        }
+    }
+    
+    public void entrenadorAceptacion(boolean acepta) {
+        if (this.traspaso == traspaso.solicitado) {
+            this.traspaso = acepta ? traspaso.aprobado_por_entrenador : traspaso.rechazado_por_entrenador;
+            System.out.println("Decision de traspaso: " + this.traspaso + " del jugador: " + this.nombre);
+        } else {
+            System.out.println("Traspaso aún no solicitado.");
+        }
+    }
+    
+    public void presidenteAceptacion(boolean acepta) {
+        if (this.traspaso == traspaso.aprobado_por_entrenador) {
+            this.traspaso = acepta ? traspaso.aprobado_por_presidente : traspaso.rechazado_por_presidente;
+            System.out.println("Decision de traspaso: " + this.traspaso + " del jugador: " + this.nombre);
+        } else {
+            System.out.println("Falta aprobación de Entrenador para: " + this.nombre);
+        }
+    }
+    
+    public void transferir(equipo nuevoEquipo) {
+        if (this.traspaso == traspaso.aprobado_por_presidente) {
+            if (this.equipo != null) {
+                this.equipo.eliminarJug(this);
+            }
+            nuevoEquipo.agregarJug(this);
+            this.traspaso = traspaso.sin_solicitar;
+            System.out.println(this.nombre + " ha sido transferido a " + nuevoEquipo.getNombre());
+        } else {
+            System.out.println(this.nombre + " no ha sido aprobado por el presidente.");
+        }
+    }
+    
     public String getNombre() {
         return nombre;
     }

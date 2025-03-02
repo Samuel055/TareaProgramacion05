@@ -66,6 +66,29 @@ public class App {
         System.out.println(entrenador1);
         System.out.println(presidente1);
 
+        System.out.println("-----Jugador 2 y 3 piden traspaso al equipo 2-----");
+        jugador2.setTraspaso(traspaso.solicitado);
+        jugador2.solicitudDeTraspaso();
+        jugador3.solicitudDeTraspaso();
+
+        System.out.println("-----Entrenador decide si acepta o no-----");
+        jugador2.entrenadorAceptacion(false);
+        jugador3.entrenadorAceptacion(true);
+
+        System.out.println("-----Presidente decide si acepta o no-----");
+        jugador2.presidenteAceptacion(true);
+        jugador3.presidenteAceptacion(true);
+
+        System.out.println("-----Proceso de traspaso de jugador(es) aceptados-----");
+        jugador3.transferir(equipo2);
+
+        System.out.println("-----Reseteo del estado de Traspaso para los rechazados-----");
+        equipo1.reseteo();
+        System.out.println("-----Visualizacion del estado del jugador 2-----");
+        System.out.println(jugador2);
+        System.out.println("-----Visualizacion del estado del equipo 2-----");
+        System.out.println(equipo2);
+
     }
 
 }
