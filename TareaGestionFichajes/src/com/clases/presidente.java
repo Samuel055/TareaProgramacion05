@@ -4,11 +4,16 @@ public class presidente {
     private String nombre;
     private String dni;
     private equipo equipo;
+    private static int totalPresi = 0;
 
     public presidente(String nombre_presi, String dni_presi, equipo equipo_presi) {
         this.nombre = (nombre_presi != null) ? nombre_presi : "Ninguno";
         this.dni = (dni_presi != null) ? dni_presi : "--------";
         this.equipo = equipo_presi;
+        totalPresi++;
+    }
+    public static int getTotalPresi() {
+        return totalPresi;
     }
 
     public String getNombre() {

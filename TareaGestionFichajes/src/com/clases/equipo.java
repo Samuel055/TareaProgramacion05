@@ -8,6 +8,7 @@ public class equipo {
     private entrenador entrenador;
     private presidente presidente;
     private ArrayList<jugador> jugador;
+    private static int totalEqui = 0;
 
     public equipo(String nombre_equi, String abreviatura_equi, entrenador entrenador_equi, presidente presidente_equi,
             ArrayList jugador_equi) {
@@ -16,6 +17,10 @@ public class equipo {
         this.entrenador = entrenador_equi;
         this.presidente = presidente_equi;
         this.jugador = (jugador_equi != null) ? jugador_equi : new ArrayList<>();
+        totalEqui++;
+    }
+    public static int getTotalEqui(){
+        return totalEqui;
     }
 
     public void agregarJug(jugador jugador) {

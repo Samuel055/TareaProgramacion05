@@ -11,6 +11,7 @@ public class jugador {
     private int dorsal;
     private traspaso traspaso;
     private equipo equipo;
+    private static int totalJug = 0;
 
     public jugador(String nombre_jug, Date nacimiento_jug, String pais_jug, posicion posicion_jug, int dorsal_jug,
             traspaso traspaso_jug, equipo equipo_jug) {
@@ -20,6 +21,10 @@ public class jugador {
         this.posicion = (posicion_jug != null) ? posicion_jug : posicion.reserva;
         this.dorsal = (dorsal_jug >= 1) ? dorsal_jug : 0;
         this.traspaso = (traspaso_jug != null) ? traspaso_jug : traspaso.sin_solicitar;
+        totalJug++;
+    }
+    public static int getTotalJug() {
+        return totalJug;
     }
 
     public void solicitudDeTraspaso() {

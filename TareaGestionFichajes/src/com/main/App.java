@@ -89,6 +89,12 @@ public class App {
         System.out.println("-----Visualizacion del estado del equipo 2-----");
         System.out.println(equipo2);
 
+        System.out.println("-----Conteo de objetos totales creados-----");
+        System.out.println("Total de entrenadores: " + entrenador.getTotalEntr());
+        System.out.println("Total de equipos: " + equipo.getTotalEqui());
+        System.out.println("Total de jugadores: " + jugador.getTotalJug());
+        System.out.println("Total de presidentes: " + presidente.getTotalPresi());
+
     }
 
 }
