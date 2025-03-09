@@ -99,6 +99,12 @@ public class presidente extends trabajador {
         this.equipo = equipo;
     }
 
+    /**
+     * Aprueba el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será aprobado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
     public void aprobarTraspaso(jugador jugador, equipo equipo) {
         if (jugador.getEquipo() != equipo) {
             System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores.");
@@ -114,6 +120,12 @@ public class presidente extends trabajador {
         }
     }
 
+    /**
+     * Rechaza el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será rechazado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
     public void rechazarTraspaso(jugador jugador, equipo equipo) {
         if (jugador.getEquipo() != equipo) {
             System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores");
