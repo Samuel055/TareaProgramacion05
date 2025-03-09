@@ -7,7 +7,7 @@ import java.util.Date;
  * Representa un jugador de fútbol con atributos como nombre, posición, equipo y
  * estado de traspaso.
  */
-public class jugador {
+public class jugador extends trabajador {
     private String nombre;
     private Date nacimiento;
     private String pais;
@@ -30,6 +30,7 @@ public class jugador {
      */
     public jugador(String nombre_jug, Date nacimiento_jug, String pais_jug, posicion posicion_jug, int dorsal_jug,
             traspaso traspaso_jug, equipo equipo_jug) {
+        super(nombre_jug, nacimiento_jug, pais_jug);
         this.nombre = (nombre_jug != null) ? nombre_jug : "Ninguno";
         this.nacimiento = (nacimiento_jug != null) ? nacimiento_jug : new Date();
         this.pais = (pais_jug != null) ? pais_jug : "Ninguno";
@@ -37,6 +38,11 @@ public class jugador {
         this.dorsal = (dorsal_jug >= 1) ? dorsal_jug : 0;
         this.traspaso = (traspaso_jug != null) ? traspaso_jug : traspaso.sin_solicitar;
         totalJug++;
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Mostrar info de: " + nombre + " / " + "de tipo Jugador");
     }
 
     /**
@@ -249,8 +255,10 @@ public class jugador {
     @Override
     public String toString() {
         String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
-        return "jugador [nombre=" + nombre + ", nacimiento=" + nacimiento + ", pais=" + pais + ", posicion=" + posicion
-                + ", dorsal=" + dorsal + ", traspaso=" + traspaso + ", equipo=" + comprobarEquipo + "]";
+        return "jugador [Nombre=" + getNombre() + ", FechaNacimiento()=" + getFechaNacimiento()
+                + ", PaisDeOrigen()=" + getPaisDeOrigen() + ", equipo=" + comprobarEquipo
+                + ", posicion=" + posicion + ", dorsal=" + dorsal
+                + ", traspaso=" + traspaso + "]";
     }
 
 }

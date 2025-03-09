@@ -1,9 +1,11 @@
 package com.clases;
 
+import java.util.Date;
+
 /**
  * Representa al presidente de un equipo de fútbol.
  */
-public class presidente {
+public class presidente extends trabajador {
     private String nombre;
     private String dni;
     private equipo equipo;
@@ -16,11 +18,18 @@ public class presidente {
      * @param dni_presi    DNI del presidente.
      * @param equipo_presi Equipo que preside.
      */
-    public presidente(String nombre_presi, String dni_presi, equipo equipo_presi) {
+    public presidente(String nombre_presi, Date nacimiento_presi, String pais_presi, String dni_presi,
+            equipo equipo_presi) {
+        super(nombre_presi, nacimiento_presi, pais_presi);
         this.nombre = (nombre_presi != null) ? nombre_presi : "Ninguno";
         this.dni = (dni_presi != null) ? dni_presi : "--------";
         this.equipo = equipo_presi;
         totalPresi++;
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Mostrar info de: " + nombre + " / " + "de tipo Presidente");
     }
 
     /**
@@ -96,6 +105,9 @@ public class presidente {
     @Override
     public String toString() {
         String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
-        return "presidente [nombre=" + nombre + ", dni=" + dni + ", equipo=" + comprobarEquipo + "]";
+        return "presidente [Nombre=" + getNombre() + ", PaisDeOrigen=" + getPaisDeOrigen()
+                + ", FechaNacimiento="
+                + getFechaNacimiento() + ", equipo=" + comprobarEquipo + ", dni=" + dni
+                + "]";
     }
 }

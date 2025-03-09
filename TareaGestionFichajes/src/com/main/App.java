@@ -32,8 +32,8 @@ public class App {
          */
         public static void main(String[] args) throws Exception {
                 // Creación de entrenadores
-                entrenador entrenador1 = new entrenador("Pep Guardiola", formacion._251, null);
-                entrenador entrenador2 = new entrenador("Carlo Ancelotti", formacion._431, null);
+                entrenador entrenador1 = new entrenador("Pep Guardiola", nacimiento(1982, 5, 15), "España",formacion._251, null);
+                entrenador entrenador2 = new entrenador("Carlo Ancelotti",nacimiento(2000, 3, 16), "Francia",formacion._431, null);
 
                 // Creación de equipos
                 equipo equipo1 = new equipo("Bayern Munich", "BAY", null, null, null);
@@ -56,8 +56,8 @@ public class App {
                                 traspaso.sin_solicitar, null);
 
                 // Creación de presidentes
-                presidente presidente1 = new presidente("Florentino Perez", "12345678J", null);
-                presidente presidente2 = new presidente("Joan Laporta", "87654321J", null);
+                presidente presidente1 = new presidente("Florentino Perez",nacimiento(1982, 9, 12), "Argentina","12345678J", null);
+                presidente presidente2 = new presidente("Joan Laporta",nacimiento(1979, 3, 8), "Portugal","87654321J", null);
 
                 // Listas de jugadores para cada equipo
                 ArrayList<jugador> BAY = new ArrayList<>();
