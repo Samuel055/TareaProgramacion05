@@ -98,6 +98,28 @@ public class entrenador extends trabajador {
         this.equipo = equipo;
     }
 
+    public void aprobarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El entrenador solo puede aprobar los traspasos de sus jugadores.");
+            return;
+        }
+        if (jugador.getTraspaso() == traspaso.solicitado) {
+            jugador.setTraspaso(traspaso.aprobado_por_entrenador);
+            System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+        } else {
+            System.out.println("Traspaso aún no solicitado.");
+        }
+    }
+
+    public void rechazarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El entrenador solo puede rechazar los traspasos de sus jugadores");
+            return;
+        }
+        jugador.setTraspaso(traspaso.rechazado_por_entrenador);
+        System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+    }
+
     /**
      * Representación en cadena del objeto entrenador.
      * 
