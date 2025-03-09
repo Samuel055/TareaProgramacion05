@@ -1,11 +1,12 @@
 package com.clases;
 
+import java.util.Date;
 import com.enums.*;
 
 /**
  * Representa un entrenador de un equipo de fútbol.
  */
-public class entrenador {
+public class entrenador extends trabajador {
     private String nombre;
     private formacion formacion;
     private equipo equipo;
@@ -19,11 +20,18 @@ public class entrenador {
      *                       la formación por defecto (_332_default).
      * @param equipo_entr    Equipo al que pertenece el entrenador.
      */
-    public entrenador(String nombre_entr, formacion formacion_entr, equipo equipo_entr) {
+    public entrenador(String nombre_entr, Date nacimiento_entr, String pais_entr, formacion formacion_entr,
+            equipo equipo_entr) {
+        super(nombre_entr, nacimiento_entr, pais_entr);
         this.nombre = (nombre_entr != null) ? nombre_entr : "Ninguno";
         this.formacion = (formacion_entr != null) ? formacion_entr : formacion._332_default;
         this.equipo = equipo_entr;
         totalEntr++;
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Mostrar info de: " + nombre + " / " + "de tipo Entrenador");
     }
 
     /**
@@ -91,6 +99,40 @@ public class entrenador {
     }
 
     /**
+     * Aprueba el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será aprobado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
+    public void aprobarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El entrenador solo puede aprobar los traspasos de sus jugadores.");
+            return;
+        }
+        if (jugador.getTraspaso() == traspaso.solicitado) {
+            jugador.setTraspaso(traspaso.aprobado_por_entrenador);
+            System.out.println("Decisión de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+        } else {
+            System.out.println("Traspaso aún no solicitado.");
+        }
+    }
+
+    /**
+     * Rechaza el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será rechazado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
+    public void rechazarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El entrenador solo puede rechazar los traspasos de sus jugadores");
+            return;
+        }
+        jugador.setTraspaso(traspaso.rechazado_por_entrenador);
+        System.out.println("Decisión de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+    }
+
+    /**
      * Representación en cadena del objeto entrenador.
      * 
      * @return Cadena con la información del entrenador.
@@ -98,6 +140,9 @@ public class entrenador {
     @Override
     public String toString() {
         String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
-        return "entrenador [nombre=" + nombre + ", formacion=" + formacion + ", equipo=" + comprobarEquipo + "]";
+        return "entrenador [Nombre=" + getNombre() + ", FechaNacimiento=" + getFechaNacimiento()
+                + ", PaisDeOrigen=" + getPaisDeOrigen()
+                + ", formacion=" + formacion + ", equipo=" + comprobarEquipo
+                + "]";
     }
 }

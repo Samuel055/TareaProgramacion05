@@ -1,9 +1,13 @@
 package com.clases;
 
+import java.util.Date;
+
+import com.enums.traspaso;
+
 /**
  * Representa al presidente de un equipo de fútbol.
  */
-public class presidente {
+public class presidente extends trabajador {
     private String nombre;
     private String dni;
     private equipo equipo;
@@ -16,11 +20,18 @@ public class presidente {
      * @param dni_presi    DNI del presidente.
      * @param equipo_presi Equipo que preside.
      */
-    public presidente(String nombre_presi, String dni_presi, equipo equipo_presi) {
+    public presidente(String nombre_presi, Date nacimiento_presi, String pais_presi, String dni_presi,
+            equipo equipo_presi) {
+        super(nombre_presi, nacimiento_presi, pais_presi);
         this.nombre = (nombre_presi != null) ? nombre_presi : "Ninguno";
         this.dni = (dni_presi != null) ? dni_presi : "--------";
         this.equipo = equipo_presi;
         totalPresi++;
+    }
+
+    @Override
+    public void mostrarInfo() {
+        System.out.println("Mostrar info de: " + nombre + " / " + "de tipo Presidente");
     }
 
     /**
@@ -89,6 +100,43 @@ public class presidente {
     }
 
     /**
+     * Aprueba el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será aprobado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
+    public void aprobarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores.");
+            return;
+        }
+
+        if (jugador.getTraspaso() == traspaso.aprobado_por_entrenador) {
+            jugador.setTraspaso(traspaso.aprobado_por_presidente);
+            System.out.println(
+                    "Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+        } else {
+            System.out.println("Falta aprobación de Entrenador para: " + jugador.getNombre());
+        }
+    }
+
+    /**
+     * Rechaza el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será rechazado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
+    public void rechazarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores");
+            return;
+        }
+
+        jugador.setTraspaso(traspaso.rechazado_por_presidente);
+        System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+    }
+
+    /**
      * Devuelve una representación en cadena del presidente.
      * 
      * @return Una cadena con la información del presidente.
@@ -96,6 +144,9 @@ public class presidente {
     @Override
     public String toString() {
         String comprobarEquipo = (equipo != null) ? equipo.getNombre() : "Ninguno";
-        return "presidente [nombre=" + nombre + ", dni=" + dni + ", equipo=" + comprobarEquipo + "]";
+        return "presidente [Nombre=" + getNombre() + ", PaisDeOrigen=" + getPaisDeOrigen()
+                + ", FechaNacimiento="
+                + getFechaNacimiento() + ", equipo=" + comprobarEquipo + ", dni=" + dni
+                + "]";
     }
 }
