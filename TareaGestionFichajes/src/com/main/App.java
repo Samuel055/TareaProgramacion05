@@ -134,6 +134,7 @@ public class App {
 
                 // Conteo de objetos totales creados
                 System.out.println("-----Conteo de objetos totales creados-----");
+                System.out.println("Total de trabajadores: " + trabajador.getTotalTra());
                 System.out.println("Total de entrenadores: " + entrenador.getTotalEntr());
                 System.out.println("Total de equipos: " + equipo.getTotalEqui());
                 System.out.println("Total de jugadores: " + jugador.getTotalJug());

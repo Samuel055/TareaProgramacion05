@@ -98,6 +98,12 @@ public class entrenador extends trabajador {
         this.equipo = equipo;
     }
 
+    /**
+     * Aprueba el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será aprobado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
     public void aprobarTraspaso(jugador jugador, equipo equipo) {
         if (jugador.getEquipo() != equipo) {
             System.out.println("El entrenador solo puede aprobar los traspasos de sus jugadores.");
@@ -105,19 +111,25 @@ public class entrenador extends trabajador {
         }
         if (jugador.getTraspaso() == traspaso.solicitado) {
             jugador.setTraspaso(traspaso.aprobado_por_entrenador);
-            System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+            System.out.println("Decisión de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
         } else {
             System.out.println("Traspaso aún no solicitado.");
         }
     }
 
+    /**
+     * Rechaza el traspaso de un jugador si cumple las condiciones necesarias.
+     * 
+     * @param jugador Jugador cuyo traspaso será rechazado.
+     * @param equipo Equipo en el que actualmente juega el jugador.
+     */
     public void rechazarTraspaso(jugador jugador, equipo equipo) {
         if (jugador.getEquipo() != equipo) {
             System.out.println("El entrenador solo puede rechazar los traspasos de sus jugadores");
             return;
         }
         jugador.setTraspaso(traspaso.rechazado_por_entrenador);
-        System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+        System.out.println("Decisión de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
     }
 
     /**
