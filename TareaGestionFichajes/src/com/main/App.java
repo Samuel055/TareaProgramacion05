@@ -91,31 +91,38 @@ public class App {
                 equipo2.agregarJug(jugador4);
                 equipo2.agregarJug(jugador5);
 
-                // Impresión del estado inicial de los equipos y jugadores
+                // Impresión del estado inicial de las clases, su info y su comparacion de Paises
                 System.out.println(equipo1);
                 System.out.println(jugador1);
                 System.out.println(entrenador1);
                 System.out.println(presidente1);
 
+                jugador1.mostrarInfo();
+                jugador1.mismaNacionalidad(jugador2);
+
                 // Simulación de solicitudes de traspaso
-                System.out.println("-----Jugador 2 y 3 piden traspaso al equipo 2-----");
+                System.out.println("-----Jugador 1, 2 y 3 piden traspaso hacia otro equipo-----");
+                jugador1.setTraspaso(traspaso.solicitado);
                 jugador2.setTraspaso(traspaso.solicitado);
+                jugador1.solicitudDeTraspaso();
                 jugador2.solicitudDeTraspaso();
                 jugador3.solicitudDeTraspaso();
 
                 // Decisión del entrenador sobre los traspasos
                 System.out.println("-----Entrenador decide si acepta o no-----");
-                jugador2.entrenadorAceptacion(false);
-                jugador3.entrenadorAceptacion(true);
+                entrenador1.aprobarTraspaso(jugador1, equipo1);
+                entrenador1.rechazarTraspaso(jugador2, equipo1);
+                entrenador1.aprobarTraspaso(jugador3, equipo2);
 
                 // Decisión del presidente sobre los traspasos
                 System.out.println("-----Presidente decide si acepta o no-----");
-                jugador2.presidenteAceptacion(true);
-                jugador3.presidenteAceptacion(true);
+                presidente1.aprobarTraspaso(jugador1, equipo1);
+                presidente1.aprobarTraspaso(jugador2, equipo1);
+                presidente1.aprobarTraspaso(jugador3, equipo2);
 
                 // Proceso de traspaso de los jugadores aprobados
                 System.out.println("-----Proceso de traspaso de jugador(es) aceptados-----");
-                jugador3.transferir(equipo2);
+                jugador1.transferir(equipo2);
 
                 // Reseteo de estados de traspaso en el equipo 1
                 System.out.println("-----Reseteo del estado de Traspaso para los rechazados-----");

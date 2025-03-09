@@ -2,6 +2,8 @@ package com.clases;
 
 import java.util.Date;
 
+import com.enums.traspaso;
+
 /**
  * Representa al presidente de un equipo de fútbol.
  */
@@ -95,6 +97,31 @@ public class presidente extends trabajador {
      */
     public void setEquipo(equipo equipo) {
         this.equipo = equipo;
+    }
+
+    public void aprobarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores.");
+            return;
+        }
+
+        if (jugador.getTraspaso() == traspaso.aprobado_por_entrenador) {
+            jugador.setTraspaso(traspaso.aprobado_por_presidente);
+            System.out.println(
+                    "Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
+        } else {
+            System.out.println("Falta aprobación de Entrenador para: " + jugador.getNombre());
+        }
+    }
+
+    public void rechazarTraspaso(jugador jugador, equipo equipo) {
+        if (jugador.getEquipo() != equipo) {
+            System.out.println("El presidente solo puede aprobar los traspasos de sus jugadores");
+            return;
+        }
+
+        jugador.setTraspaso(traspaso.rechazado_por_presidente);
+        System.out.println("Decision de traspaso: " + jugador.getTraspaso() + " del jugador: " + jugador.getNombre());
     }
 
     /**
